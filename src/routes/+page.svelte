@@ -10,5 +10,5 @@
 <button on:mouseenter={increment}>
 	clicks: {count}
 </button>
-<a href="/dashboard">About my site</a>
+<a class="bg-blue-500" href="/dashboard">About my site</a>
 
