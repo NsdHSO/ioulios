@@ -12,12 +12,10 @@
 	}
 
   let number = 0
-	setInterval(()=>{
-    number = getRandomNumber().toFixed(2)
-	},1000)
+
 </script>
 
-<Rock randomNumber={number} />
+<Rock />
 <form method="POST">
 	<label>
 		Email
