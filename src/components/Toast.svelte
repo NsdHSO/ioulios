@@ -2,12 +2,12 @@
   /**
    * @type {number}
    */
-  export let index = 0;
+  export let index;
 
   /**
    * @type {string}
    */
-  export let user = '';
+  export let user ;
 </script>
 
 <ul class="scroll-auto ml-4">
