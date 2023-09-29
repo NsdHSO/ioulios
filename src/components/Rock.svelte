@@ -1,6 +1,6 @@
 <script>
-	import Toast  from './Toast.svelte';
 	import { writable } from 'svelte/store';
+	import Toast from './Toast.svelte';
 	let inputName = '';
 
 	/**
@@ -58,6 +58,13 @@
 			submit();
 		}
 	}
+	/**
+	 *
+	 * @param {{detail: {id: number}}}index
+	 */
+	function removeElement(index) {
+		users.update(vmx=> vmx.filter((v,idx) => idx !== index.detail.id))
+	}
 </script>
 
 <div class="flex gap-4">
@@ -74,7 +81,7 @@
 			<div class="w-40 text-red-500">You introduce a duplicate key</div>
 		{/if}
 		{#each $users as user, index}
-			<Toast user={user} index={index}/>
+			<Toast {user} {index} on:elementRemove={(res) => removeElement(res)} />
 		{:else}
 			<div class="w-40">Please can you add users? For the moment you don't have add noting</div>
 		{/each}
