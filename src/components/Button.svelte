@@ -1,23 +1,27 @@
 <script>
-	import { VariationButton } from './../utils/Variation-Button.js';
+	import { extractRounded, extractVariation } from './../utils/Variation-Button.js';
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
+
+	function clickEvent() {
+		dispatch('marian');
+	}
 
 	/**
-	 *  This function return value of what type button is.
-	 * @param type {number}
-	 * @return {string}
+	 *  @type {number}
 	 */
-	function extractVariation(type) {
-		switch (type) {
-			case VariationButton.Text:
-				return 'text';
-			case VariationButton.Outlined:
-				return 'outline';
-			default:
-				return '';
-		}
-	}
+	export let roundedButton = 1;
+
+	/**
+	 *  @type {number}
+	 */
+	export let typeButton = 0;
 </script>
 
-<button>
+<button
+	on:click={clickEvent}
+	class={`${extractRounded(roundedButton)} ${extractVariation(typeButton)}`}
+>
 	<slot />
 </button>
