@@ -1,4 +1,5 @@
 <script>
+	import Button from '../components/Button.svelte';
 	let count = 0;
 	$: double = count + 2;
 
@@ -11,3 +12,4 @@
 	clicks: {count}
 </button>
 <a class="bg-blue-500" href="/dashboard">About my site</a>
+<Button>Press Me</Button>

@@ -17,7 +17,6 @@
      * @param {number}index
      */
     function removeElement(index) {
-        console.log(index);
         disaptch('elementRemove', {
             id: index
         });

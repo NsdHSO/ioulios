@@ -1,6 +1,10 @@
 <script>
 	import { writable } from 'svelte/store';
 	import Toast from './Toast.svelte';
+	/**
+	 * @type {import('svelte/store').Writable<string[]>}
+	 */
+	export let toasts
 	let inputName = '';
 
 	/**
@@ -19,10 +23,8 @@
 	 */
 	let duplicate = writable(false);
 
-	/**
-	 * @type {import('svelte/store').Writable<string[]>}
-	 */
-	let users = writable([]);
+
+	let users = writable([...toasts]);
 
 	/**
 	 *
